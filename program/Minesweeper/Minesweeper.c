@@ -87,17 +87,17 @@ int main(void)
     }
 
     // 周りにある爆弾の個数
-    int jadge_x[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
-    int jadge_y[8] = {-1, 1, 0, -1, 1, -1, 1, 0};
+    int judge_x[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
+    int judge_y[8] = {-1, 1, 0, -1, 1, -1, 1, 0};
 
     for (int k = 0; k < 8; k++)
     {
-        int Count_x = U_x + jadge_x[k];
-        int Count_y = U_y + jadge_y[k];
+        int Count_x = U_x + judge_x[k];
+        int Count_y = U_y + judge_y[k];
 
-        if (table[Count_x][Count_y] > 0 && 0 <= Count_x && Count_x < x && 0 <= Count_y && Count_y < y)
+        if (table[Count_y][Count_x] > 0 && 0 <= Count_x && Count_x < x && 0 <= Count_y && Count_y < y)
         {
-            count += table[Count_x][Count_y];
+            count += table[Count_y][Count_x];
         }
     }
 
